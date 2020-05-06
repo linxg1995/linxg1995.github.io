@@ -10,21 +10,21 @@
   <meta name="description" content="updated:2020&#x2F;04&#x2F;13 以前不写博客总结，觉得是自己的一个弱项，所以想提升自己，养成一个好习惯。第一篇就记 用Hexo快速搭建github.io的个人博客。   一、开发环境123系统：Win10编辑器：VSCode核心框架：Hexo Hexo是一个开源的博客框架，能快速的搭建静态博客网站并部署到github或其它平台，默认支持Markdown。  二、开始搭建安装 hexo1$ n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo快速搭建github.io个人博客(2020&#x2F;04&#x2F;13更新)">
-<meta property="og:url" content="http://yoursite.com/2020/04/14/hexo/hexo/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/04/13/hexo/index.html">
 <meta property="og:site_name" content="linxg&#39;s blog">
 <meta property="og:description" content="updated:2020&#x2F;04&#x2F;13 以前不写博客总结，觉得是自己的一个弱项，所以想提升自己，养成一个好习惯。第一篇就记 用Hexo快速搭建github.io的个人博客。   一、开发环境123系统：Win10编辑器：VSCode核心框架：Hexo Hexo是一个开源的博客框架，能快速的搭建静态博客网站并部署到github或其它平台，默认支持Markdown。  二、开始搭建安装 hexo1$ n">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/04/14/assets/hexo/newProjectFolder.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/14/assets/hexo/createRepository.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/14/assets/hexo/configDeploy.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/14/assets/hexo/ioDirectory.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/14/assets/hexo/allRepository.png">
-<meta property="article:published_time" content="2020-04-14T01:10:08.834Z">
-<meta property="article:modified_time" content="2020-04-14T02:43:11.739Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/13/hexo/newProjectFolder.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/13/hexo/createRepository.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/13/hexo/configDeploy.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/13/hexo/ioDirectory.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/13/hexo/allRepository.png">
+<meta property="article:published_time" content="2020-04-13T09:52:14.000Z">
+<meta property="article:modified_time" content="2020-05-06T10:02:10.035Z">
 <meta property="article:author" content="linxg">
 <meta property="article:tag" content="开源">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/14/assets/hexo/newProjectFolder.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/13/hexo/newProjectFolder.png">
   
     <link rel="alternate" href="/atom.xml" title="linxg&#39;s blog" type="application/atom+xml">
   
@@ -77,10 +77,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hexo/hexo" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/14/hexo/hexo/" class="article-date">
-  <time datetime="2020-04-14T01:10:08.834Z" itemprop="datePublished">2020-04-14</time>
+    <a href="/2020/04/13/hexo/" class="article-date">
+  <time datetime="2020-04-13T09:52:14.000Z" itemprop="datePublished">2020-04-13</time>
 </a>
     
   </div>
@@ -108,19 +108,26 @@
 <!-- --------------------分割线-------------------- -->
 <h2 id="二、开始搭建"><a href="#二、开始搭建" class="headerlink" title="二、开始搭建"></a>二、开始搭建</h2><h3 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<h3 id="创建hexo工程"><a href="#创建hexo工程" class="headerlink" title="创建hexo工程"></a>创建hexo工程</h3><p>在自己的工作区中新建一个工程文件夹，打开终端cmd进入到该工程的根目录，执行hexo初始化：<br><img src="../../assets/hexo/newProjectFolder.png" alt="newProjectFolder.png"></p>
+<h3 id="创建hexo工程"><a href="#创建hexo工程" class="headerlink" title="创建hexo工程"></a>创建hexo工程</h3><p>在自己的工作区中新建一个工程文件夹，打开终端cmd进入到该工程的根目录，执行hexo初始化：</p>
+<img src="/2020/04/13/hexo/newProjectFolder.png" class="" title="newProjectFolder">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\linxgblog&gt;$ hexo init</span><br></pre></td></tr></table></figure>
 <p>初始化会生成工程默认需要的目录结构，然后需要安装默认需要的依赖；安装 hexo-deployer-git 插件，提供便捷的部署hexo工程到git上的操作。<br>至此工程创建完成，本地运行一下试试。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm i</span><br><span class="line">$ npm i hexo-deployer-git -S</span><br><span class="line">$</span><br><span class="line">$ hexo s  <span class="comment"># hexo server</span></span><br><span class="line"><span class="comment"># http://localhost:4000</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="创建git远程仓库"><a href="#创建git远程仓库" class="headerlink" title="创建git远程仓库"></a>创建git远程仓库</h3><p>每个git账号都可以白嫖一个用于展示个人博客的静态网站，且仓库名固定，如下图(图中的警告提示是因为我已经创建了)。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;git_username&gt;.github.io</span><br></pre></td></tr></table></figure>
-<p><img src="../../assets/hexo/createRepository.png" alt="createRepository.png"></p>
+<img src="/2020/04/13/hexo/createRepository.png" class="" title="createRepository">
+
 <h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>仓库创建完成后，得到仓库地址URL，修改配置文件 /_config.yml 相关的配置。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">&lt;repository_url&gt;</span>  <span class="comment"># git远程仓库地址</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">&lt;branch_name&gt;</span>  <span class="comment"># 分支名，一般是master</span></span><br></pre></td></tr></table></figure>
-<p><img src="../../assets/hexo/configDeploy.png" alt="createRepository.png"><br>将工程推到git上。</p>
+<img src="/2020/04/13/hexo/configDeploy.png" class="" title="configDeploy">
+<p>将工程推到git上。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean  <span class="comment"># 清除缓存</span></span><br><span class="line">$ hexo deploy  <span class="comment"># 部署</span></span><br></pre></td></tr></table></figure>
-<p>我们会注意到，执行hexo的deploy部署命令推到git上时，目录结构跟本地工程的不同，也就是编译过。<br><img src="../../assets/hexo/ioDirectory.png" alt="ioDirectory.png"><br>为了便于维护，可以再建一个git远程仓库，执行git命令把工程推上去，用来管理工程源代码。<br><img src="../../assets/hexo/allRepository.png" alt="allRepository.png.png"><br>至此，基于Hexo搭建的github.io个人博客 搭建完成，更多的配置和自定义操作，参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a>和<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">Markdown</a>进行学习。</p>
+<p>我们会注意到，执行hexo的deploy部署命令推到git上时，目录结构跟本地工程的不同，也就是编译过。</p>
+<img src="/2020/04/13/hexo/ioDirectory.png" class="" title="ioDirectory">
+<p>为了便于维护，可以再建一个git远程仓库，执行git命令把工程推上去，用来管理工程源代码。</p>
+<img src="/2020/04/13/hexo/allRepository.png" class="" title="allRepository">
+<p>至此，基于Hexo搭建的github.io个人博客 搭建完成，更多的配置和自定义操作，参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a>和<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">Markdown</a>进行学习。</p>
 <!-- More info: [Writing](https://hexo.io/docs/writing.html)
 
 ### Run server
@@ -138,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/14/hexo/hexo/" data-id="ck8zazzh20000ugbqb07u0p3f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/13/hexo/" data-id="ck9v6c91c00003cbq1cfc5o6l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
@@ -147,6 +154,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2020/05/06/vuegunui/vuegunui/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue-gun-ui说明文档：ScrollContainer 滚动容器
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -161,7 +182,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-gun-ui/" rel="tag">vue-gun-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
     </div>
   </div>
 
@@ -171,7 +192,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 10px;">开源</a>
+      <a href="/tags/vue-gun-ui/" style="font-size: 10px;">vue-gun-ui</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 10px;">开源</a>
     </div>
   </div>
 
@@ -180,7 +201,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
     </div>
   </div>
 
@@ -193,7 +214,11 @@
       <ul>
         
           <li>
-            <a href="/2020/04/14/hexo/hexo/">Hexo快速搭建github.io个人博客(2020/04/13更新)</a>
+            <a href="/2020/05/06/vuegunui/vuegunui/">vue-gun-ui说明文档：ScrollContainer 滚动容器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/13/hexo/">Hexo快速搭建github.io个人博客(2020/04/13更新)</a>
           </li>
         
       </ul>

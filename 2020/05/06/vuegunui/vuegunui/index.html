@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue-gun-ui说明文档：ScrollContainer 滚动容器 | linxg&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考了 Element UI 的scrollbar(官方文档中没有)，自己试着写了一个。和el不同的是，el的高度定义为100%，所以需要一个定义了高度的外容器包裹，然后作为内容器包裹内容。gun则是自己作为容器来包裹内容，需要定义自己的高度。当然，如果想用原生js实现，我这样的思路可能不行。 123&lt;gun-scroll-container style&#x3D;&quot;height: 200px&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-gun-ui说明文档：ScrollContainer 滚动容器">
+<meta property="og:url" content="http://yoursite.com/2020/05/06/vuegunui/vuegunui/index.html">
+<meta property="og:site_name" content="linxg&#39;s blog">
+<meta property="og:description" content="参考了 Element UI 的scrollbar(官方文档中没有)，自己试着写了一个。和el不同的是，el的高度定义为100%，所以需要一个定义了高度的外容器包裹，然后作为内容器包裹内容。gun则是自己作为容器来包裹内容，需要定义自己的高度。当然，如果想用原生js实现，我这样的思路可能不行。 123&lt;gun-scroll-container style&#x3D;&quot;height: 200px&quot;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-06T08:43:26.013Z">
+<meta property="article:modified_time" content="2020-05-06T09:36:16.583Z">
+<meta property="article:author" content="linxg">
+<meta property="article:tag" content="vue-gun-ui">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="linxg&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">linxg&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录每一次的新发现</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vuegunui/vuegunui" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/06/vuegunui/vuegunui/" class="article-date">
+  <time datetime="2020-05-06T08:43:26.013Z" itemprop="datePublished">2020-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue-gun-ui说明文档：ScrollContainer 滚动容器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- --------------------分割线-------------------- -->
+<!-- updated:2020/04/13 -->
+
+<p>参考了 <a href="https://element.eleme.cn/#/zh-CN" target="_blank" rel="noopener">Element UI</a> 的scrollbar(官方文档中没有)，自己试着写了一个。<br>和el不同的是，el的高度定义为100%，所以需要一个定义了高度的外容器包裹，然后作为内容器包裹内容。gun则是自己作为容器来包裹内容，<font color=red>需要定义自己的高度</font>。<br>当然，如果想用原生js实现，我这样的思路可能不行。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">gun-scroll-container</span> <span class="attr">style</span>=<span class="string">"height: 200px"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">gun-scroll-container</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<!-- --------------------分割线-------------------- -->
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><table>
+<thead>
+<tr>
+<th align="left">属性名称</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">可选值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">showX</td>
+<td align="left">显示X滚动条；</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">scroll</td>
+<td align="left">滚动时的触发</td>
+<td align="left">原生Event事件对象</td>
+</tr>
+</tbody></table>
+<h2 id="Slots"><a href="#Slots" class="headerlink" title="Slots"></a>Slots</h2><table>
+<thead>
+<tr>
+<th align="left">插槽名称</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-</td>
+<td align="left">默认。容器中的内容</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/06/vuegunui/vuegunui/" data-id="ck9v6c91v00033cbqcfgefhwf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-gun-ui/" rel="tag">vue-gun-ui</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/13/hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo快速搭建github.io个人博客(2020/04/13更新)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-gun-ui/" rel="tag">vue-gun-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/vue-gun-ui/" style="font-size: 10px;">vue-gun-ui</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 10px;">开源</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/06/vuegunui/vuegunui/">vue-gun-ui说明文档：ScrollContainer 滚动容器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/13/hexo/">Hexo快速搭建github.io个人博客(2020/04/13更新)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 linxg<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

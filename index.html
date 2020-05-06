@@ -68,10 +68,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hexo/hexo" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-vuegunui/vuegunui" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/14/hexo/hexo/" class="article-date">
-  <time datetime="2020-04-14T01:10:08.834Z" itemprop="datePublished">2020-04-14</time>
+    <a href="/2020/05/06/vuegunui/vuegunui/" class="article-date">
+  <time datetime="2020-05-06T08:43:26.013Z" itemprop="datePublished">2020-05-06</time>
 </a>
     
   </div>
@@ -82,7 +82,95 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/14/hexo/hexo/">Hexo快速搭建github.io个人博客(2020/04/13更新)</a>
+      <a class="article-title" href="/2020/05/06/vuegunui/vuegunui/">vue-gun-ui说明文档：ScrollContainer 滚动容器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- --------------------分割线-------------------- -->
+<!-- updated:2020/04/13 -->
+
+<p>参考了 <a href="https://element.eleme.cn/#/zh-CN" target="_blank" rel="noopener">Element UI</a> 的scrollbar(官方文档中没有)，自己试着写了一个。<br>和el不同的是，el的高度定义为100%，所以需要一个定义了高度的外容器包裹，然后作为内容器包裹内容。gun则是自己作为容器来包裹内容，<font color=red>需要定义自己的高度</font>。<br>当然，如果想用原生js实现，我这样的思路可能不行。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">gun-scroll-container</span> <span class="attr">style</span>=<span class="string">"height: 200px"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">gun-scroll-container</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<!-- --------------------分割线-------------------- -->
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><table>
+<thead>
+<tr>
+<th align="left">属性名称</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">可选值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">showX</td>
+<td align="left">显示X滚动条；</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">scroll</td>
+<td align="left">滚动时的触发</td>
+<td align="left">原生Event事件对象</td>
+</tr>
+</tbody></table>
+<h2 id="Slots"><a href="#Slots" class="headerlink" title="Slots"></a>Slots</h2><table>
+<thead>
+<tr>
+<th align="left">插槽名称</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-</td>
+<td align="left">默认。容器中的内容</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/06/vuegunui/vuegunui/" data-id="ck9v6c91v00033cbqcfgefhwf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-gun-ui/" rel="tag">vue-gun-ui</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/13/hexo/" class="article-date">
+  <time datetime="2020-04-13T09:52:14.000Z" itemprop="datePublished">2020-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/hexo/">Hexo快速搭建github.io个人博客(2020/04/13更新)</a>
     </h1>
   
 
@@ -99,19 +187,26 @@
 <!-- --------------------分割线-------------------- -->
 <h2 id="二、开始搭建"><a href="#二、开始搭建" class="headerlink" title="二、开始搭建"></a>二、开始搭建</h2><h3 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<h3 id="创建hexo工程"><a href="#创建hexo工程" class="headerlink" title="创建hexo工程"></a>创建hexo工程</h3><p>在自己的工作区中新建一个工程文件夹，打开终端cmd进入到该工程的根目录，执行hexo初始化：<br><img src="../../assets/hexo/newProjectFolder.png" alt="newProjectFolder.png"></p>
+<h3 id="创建hexo工程"><a href="#创建hexo工程" class="headerlink" title="创建hexo工程"></a>创建hexo工程</h3><p>在自己的工作区中新建一个工程文件夹，打开终端cmd进入到该工程的根目录，执行hexo初始化：</p>
+<img src="/2020/04/13/hexo/newProjectFolder.png" class="" title="newProjectFolder">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\linxgblog&gt;$ hexo init</span><br></pre></td></tr></table></figure>
 <p>初始化会生成工程默认需要的目录结构，然后需要安装默认需要的依赖；安装 hexo-deployer-git 插件，提供便捷的部署hexo工程到git上的操作。<br>至此工程创建完成，本地运行一下试试。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm i</span><br><span class="line">$ npm i hexo-deployer-git -S</span><br><span class="line">$</span><br><span class="line">$ hexo s  <span class="comment"># hexo server</span></span><br><span class="line"><span class="comment"># http://localhost:4000</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="创建git远程仓库"><a href="#创建git远程仓库" class="headerlink" title="创建git远程仓库"></a>创建git远程仓库</h3><p>每个git账号都可以白嫖一个用于展示个人博客的静态网站，且仓库名固定，如下图(图中的警告提示是因为我已经创建了)。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;git_username&gt;.github.io</span><br></pre></td></tr></table></figure>
-<p><img src="../../assets/hexo/createRepository.png" alt="createRepository.png"></p>
+<img src="/2020/04/13/hexo/createRepository.png" class="" title="createRepository">
+
 <h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>仓库创建完成后，得到仓库地址URL，修改配置文件 /_config.yml 相关的配置。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">&lt;repository_url&gt;</span>  <span class="comment"># git远程仓库地址</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">&lt;branch_name&gt;</span>  <span class="comment"># 分支名，一般是master</span></span><br></pre></td></tr></table></figure>
-<p><img src="../../assets/hexo/configDeploy.png" alt="createRepository.png"><br>将工程推到git上。</p>
+<img src="/2020/04/13/hexo/configDeploy.png" class="" title="configDeploy">
+<p>将工程推到git上。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean  <span class="comment"># 清除缓存</span></span><br><span class="line">$ hexo deploy  <span class="comment"># 部署</span></span><br></pre></td></tr></table></figure>
-<p>我们会注意到，执行hexo的deploy部署命令推到git上时，目录结构跟本地工程的不同，也就是编译过。<br><img src="../../assets/hexo/ioDirectory.png" alt="ioDirectory.png"><br>为了便于维护，可以再建一个git远程仓库，执行git命令把工程推上去，用来管理工程源代码。<br><img src="../../assets/hexo/allRepository.png" alt="allRepository.png.png"><br>至此，基于Hexo搭建的github.io个人博客 搭建完成，更多的配置和自定义操作，参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a>和<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">Markdown</a>进行学习。</p>
+<p>我们会注意到，执行hexo的deploy部署命令推到git上时，目录结构跟本地工程的不同，也就是编译过。</p>
+<img src="/2020/04/13/hexo/ioDirectory.png" class="" title="ioDirectory">
+<p>为了便于维护，可以再建一个git远程仓库，执行git命令把工程推上去，用来管理工程源代码。</p>
+<img src="/2020/04/13/hexo/allRepository.png" class="" title="allRepository">
+<p>至此，基于Hexo搭建的github.io个人博客 搭建完成，更多的配置和自定义操作，参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a>和<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">Markdown</a>进行学习。</p>
 <!-- More info: [Writing](https://hexo.io/docs/writing.html)
 
 ### Run server
@@ -129,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/14/hexo/hexo/" data-id="ck8zazzh20000ugbqb07u0p3f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/13/hexo/" data-id="ck9v6c91c00003cbq1cfc5o6l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
@@ -154,7 +249,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-gun-ui/" rel="tag">vue-gun-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
     </div>
   </div>
 
@@ -164,7 +259,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 10px;">开源</a>
+      <a href="/tags/vue-gun-ui/" style="font-size: 10px;">vue-gun-ui</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 10px;">开源</a>
     </div>
   </div>
 
@@ -173,7 +268,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
     </div>
   </div>
 
@@ -186,7 +281,11 @@
       <ul>
         
           <li>
-            <a href="/2020/04/14/hexo/hexo/">Hexo快速搭建github.io个人博客(2020/04/13更新)</a>
+            <a href="/2020/05/06/vuegunui/vuegunui/">vue-gun-ui说明文档：ScrollContainer 滚动容器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/13/hexo/">Hexo快速搭建github.io个人博客(2020/04/13更新)</a>
           </li>
         
       </ul>
