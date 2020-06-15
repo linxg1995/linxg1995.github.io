@@ -1,0 +1,40 @@
+.posts-item {
+  width: 800px;
+  margin: 15px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.posts-item a,
+.posts-item p {
+  margin: 10px 0;
+  text-align: center;
+}
+.posts-item a {
+  position: relative;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+.posts-item a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  border-bottom: 1px solid #3699ff;
+  transition: all 0.2s linear;
+}
+.posts-item a:hover {
+  color: #3699ff;
+}
+.posts-item a:hover::after {
+  left: 0;
+  width: 100%;
+}
+.posts-item p {
+  color: #999;
+}

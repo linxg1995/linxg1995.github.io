@@ -1,0 +1,33 @@
+#wrap-archive .archive-yearLabel {
+  font-size: 14px;
+  font-weight: bold;
+  color: #aaa;
+}
+#wrap-archive .archive-post {
+  display: inline-block;
+  width: 200px;
+  min-height: 100px;
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  vertical-align: top;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 0 0 1px 1px;
+}
+#wrap-archive .archive-post a {
+  display: block;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+#wrap-archive .archive-post a.post-date {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #999;
+}
+#wrap-archive .archive-post a.post-title {
+  color: #333;
+}
+#wrap-archive .archive-post a.post-title:hover {
+  color: #3699ff;
+}
