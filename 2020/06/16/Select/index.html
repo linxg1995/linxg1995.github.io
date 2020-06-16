@@ -1,0 +1,177 @@
+<!--
+ * @Description: gun - layout布局
+ * @Author: LXG
+ * @Date: 2020-05-09
+ * @LastEditTime: 2020-06-09
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linxg's blog </title>
+    <!-- 引入normalize -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <!-- 引入highlight css -->
+    
+<link rel="stylesheet" href="/lib/highlight/styles/atom-one-dark.css">
+
+    <!-- 引入css -->
+    
+<link rel="stylesheet" href="/css/main.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="wrap-container">
+        <!-- 引入header -->
+        <header id="wrap-header">
+            <!--
+ * @Description: gun - 头部
+ * @Author: LXG
+ * @Date: 2020-05-21
+ * @LastEditTime: 2020-06-09
+-->
+<nav class="header-nav">
+    <div class="normal-container">
+        <ul class="nav-menu">
+            <li>
+                <a href="/">
+                    <h3>linxg's blog</h3>
+                </a>
+
+            </li>
+            
+            <li>
+                <a href="/archives">所有文章 </a>
+            </li>
+            
+        </ul>
+        <ul class="nav-link">
+            
+            <li>
+                <a href="https://github.com/linxg1995/linxgblog" target="_blank" rel="noopener">Github </a>
+            </li>
+            
+            <li>
+                <a href="https://www.bilibili.com" target="_blank" rel="noopener">BiliBili </a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+        </header>
+
+        <!-- hexo api，body(引入index.ejs && post.ejs) -->
+        <main>
+            <!--
+ * @Description: gun - 文章详情页
+ * @Author: LXG
+ * @Date: 2020-05-23
+ * @LastEditTime: 2020-06-09
+-->
+<section id="wrap-post" class="normal-container">
+    <div class="post-title">
+        <h1>
+            vue-gun-ui说明文档：Select 选择器
+        </h1>
+        <span>创建时间：2020-06-16</span>
+        <span>更新时间：2020-06-16</span>
+    </div>
+    <!-- --------------------分割线-------------------- -->
+<p>实践了第一个版本，目前功能比较单一，跟el不同的是，el将option割出来作为一个独立的子组件，gun需要以后才能支持拓展。</p>
+<pre><code class="html">&lt;gun-select
+    v-model=&quot;value&quot;
+    :options=&quot;options&quot;
+&gt;
+&lt;/gun-select&gt;</code></pre>
+<!-- --------------------分割线-------------------- -->
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><table>
+<thead>
+<tr>
+<th align="left">属性名称</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">可选值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">v-model/value</td>
+<td align="left">绑定值；</td>
+<td align="left">String / Number</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">options</td>
+<td align="left">选项列表；可以是基本的<font color=red>String数组</font>或<font color=red>Number数组</font>，或<font color=red>Object数组</font>；</td>
+<td align="left">Array</td>
+<td align="left">[]</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">valueKey</td>
+<td align="left">选中时绑定的值字段；提供给Object选项用的，如果选项是基本数据类型，则默认取自身；</td>
+<td align="left">String</td>
+<td align="left">value</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">labelKey</td>
+<td align="left">选中时绑定的显示字段；提供给Object选项用的，如果选项是基本数据类型，则默认取自身；</td>
+<td align="left">String</td>
+<td align="left">label</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">placeholder</td>
+<td align="left">占位符；</td>
+<td align="left">String</td>
+<td align="left">请选择</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">toggleSelect</td>
+<td align="left">菜单框切换显示时</td>
+<td align="left">show：显示状态，Boolean类型；</td>
+</tr>
+<tr>
+<td align="left">change</td>
+<td align="left">选择且绑定值改变时</td>
+<td align="left">val：选中的绑定值；<br>info：包含选中的选项（如果该选项是基本数据类型，则和val相同）和下标；</td>
+</tr>
+</tbody></table>
+
+</section>
+        </main>
+    </div>
+
+    <!-- 引入jQuery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 引入highlight js -->
+    
+<script src="/lib/highlight/highlight.pack.js"></script>
+
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    <!-- 引入js -->
+    
+<script src="/js/main.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
