@@ -17,6 +17,9 @@
   line-height: 1.5rem;
   color: #555;
 }
+#wrap-post img {
+  width: 100%;
+}
 #wrap-post table {
   width: 100%;
   padding: 0 20px;
