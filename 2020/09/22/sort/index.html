@@ -1,0 +1,222 @@
+<!--
+ * @Description: gun - layout布局
+ * @Author: LXG
+ * @Date: 2020-05-09
+ * @LastEditTime: 2020-06-09
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linxg's blog </title>
+    <!-- 引入normalize -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <!-- 引入highlight css -->
+    
+<link rel="stylesheet" href="/lib/highlight/styles/atom-one-dark.css">
+
+    <!-- 引入css -->
+    
+<link rel="stylesheet" href="/css/main.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="wrap-container">
+        <!-- 引入header -->
+        <header id="wrap-header">
+            <!--
+ * @Description: gun - 头部
+ * @Author: LXG
+ * @Date: 2020-05-21
+ * @LastEditTime: 2020-06-09
+-->
+<nav class="header-nav">
+    <div class="normal-container">
+        <ul class="nav-menu">
+            <li>
+                <a href="/">
+                    <h3>linxg's blog</h3>
+                </a>
+
+            </li>
+            
+            <li>
+                <a href="/archives">所有文章 </a>
+            </li>
+            
+        </ul>
+        <ul class="nav-link">
+            
+            <li>
+                <a href="https://github.com/linxg1995/linxgblog" target="_blank" rel="noopener">Github </a>
+            </li>
+            
+            <li>
+                <a href="https://www.bilibili.com" target="_blank" rel="noopener">BiliBili </a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+        </header>
+
+        <!-- hexo api，body(引入index.ejs && post.ejs) -->
+        <main>
+            <!--
+ * @Description: gun - 文章详情页
+ * @Author: LXG
+ * @Date: 2020-05-23
+ * @LastEditTime: 2020-06-09
+-->
+<section id="wrap-post" class="normal-container">
+    <div class="post-title">
+        <h1>
+            js实现前端常用的几种排序的算法逻辑
+        </h1>
+        <span>创建时间：2020-09-22</span>
+        <span>更新时间：2020-09-22</span>
+    </div>
+    <!-- --------------------分割线-------------------- -->
+
+<p>算法主要用于<font color=red>对一个值的初始状态经过一系列的计算得到新的状态</font>。</p>
+<p>算法不分前后端，只是在前端中的使用场景很少，特别是做后台管理系统一类的项目。接触算法能让自己的逻辑思维能力变得更稠密、清晰，提高对逻辑复杂的代码块的阅读能力。</p>
+<p><font color=red>排序算法</font>是大部分程序员入门最早接触的算法，目前多达10+种，我选择了下表所示的3种，用js的语法来实现它们的逻辑：</p>
+<table>
+<thead>
+<tr>
+<th align="center">排序算法名称</th>
+<th align="center">avg时间复杂度</th>
+<th align="center">min时间复杂度</th>
+<th align="center">max时间复杂度</th>
+<th align="center">空间复杂度</th>
+<th align="center">稳定性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">冒泡排序</td>
+<td align="center">O(n<sup>2</sup>)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n<sup>2</sup>)</td>
+<td align="center">O(1)</td>
+<td align="center">稳定</td>
+</tr>
+<tr>
+<td align="center">快速排序</td>
+<td align="center">O(n log(n))</td>
+<td align="center">O(n log(n))</td>
+<td align="center">O(n<sup>2</sup>)</td>
+<td align="center">O(log(n))</td>
+<td align="center">不稳定</td>
+</tr>
+<tr>
+<td align="center">归并排序</td>
+<td align="center">O(n log(n))</td>
+<td align="center">O(n log(n))</td>
+<td align="center">O(n log(n))</td>
+<td align="center">O(n)</td>
+<td align="center">稳定</td>
+</tr>
+</tbody></table>
+<h2 id="冒泡排序-Bubble"><a href="#冒泡排序-Bubble" class="headerlink" title="冒泡排序(Bubble)"></a>冒泡排序(Bubble)</h2><p>冒泡是我读书上Java课学到的，最简单、易理解，其核心的思路是：</p>
+<p>遍历整个数组，依次两两相邻比较，满足condition则互换，每次循环确定1个数。</p>
+<img src="/2020/09/22/sort/bubbleSort.gif" class="" title="bubbleSort">
+
+<pre><code class="javascript">function bubbleSort(arr) {
+    for (let i = 0, l = arr.length; i &lt; l; i++) {
+        for (let j = 0, m = l - i - 1; j &lt; m; j++) {
+            if (arr[l - j - 2] &gt; arr[l - j - 1]) {
+                let temp = arr[l - j - 2]
+                arr[l - j - 2] = arr[l - j - 1]
+                arr[l - j - 1] = temp
+            }
+        }
+    }
+}</code></pre>
+<p>可以看到，上图所示，是头到尾的遍历，我的代码是从尾到头的，只是为了体现出往前冒泡的感觉，没有差异。</p>
+<h2 id="快速排序-Quick"><a href="#快速排序-Quick" class="headerlink" title="快速排序(Quick)"></a>快速排序(Quick)</h2><p>JS中的 Array.prototype.sort() ，不同浏览器实现的方法不同，对于Chrome，源码显示，当数组长度小于10时用插入排序，否则用快速排序。</p>
+<p>快排是一种先整后分的分治的概念，非常适用于数据量大的场景，其核心的思路是：</p>
+<p>选取一个基准值，其余值依次跟它比较，小于基准值的放左边，大于等于基准值的放右边，基准值放中间，完成第一次排序，然后左右数组各自递归，最终完成排序。</p>
+<img src="/2020/09/22/sort/quickSort.gif" class="" title="quickSort">
+
+<pre><code class="javascript">function quickSort(arr, start = 0, end = arr.length - 1) {
+    if (end &lt;= start) return
+    let temp = [arr[start]]
+    let mid = start
+    for (let i = start + 1; i &lt;= end; i++) {
+        if (arr[start] &gt; arr[i])) {
+            temp.push(arr[i])
+        } else {
+            temp.unshift(arr[i])
+            mid++
+        }
+    }
+    for (let i = 0; i &lt; temp.length; i++) {
+        arr[start + i] = temp[i];
+    }
+    quickSort(arr, start, mid - 1)
+    quickSort(arr, mid + 1, end)
+}</code></pre>
+<h2 id="归并排序-Merge"><a href="#归并排序-Merge" class="headerlink" title="归并排序(Merge)"></a>归并排序(Merge)</h2><p>归并也是分治的概念，它有两种实现的方法：自上而下的递归、自下而上的迭代，我用的是自上而下递归。</p>
+<p>归并的分治和快排的分治不同，快排是边排边拆，再分开递归，而归并则是先拆后排(先拆后合)，其核心的思路是：</p>
+<p>将数组对半分，分开递归一直对半分，直到全部拆成单个，然后顺着拆分的树，左右像打车轮战一样完成排序。</p>
+<img src="/2020/09/22/sort/mergeSort.jpg" class="" title="mergeSort">
+
+<pre><code class="javascript">function branch(arr, start = 0, end = arr.length - 1) {
+    if (end &lt;= start) return
+    let mid = parseInt((start + end) / 2)
+    branch.call(this, arr, start, mid)
+    branch.call(this, arr, mid + 1, end)
+    mergeSort.call(this, arr, start, mid, end)
+}
+function mergeSort(arr, start, mid, end) {
+    let temp = new Array()
+    let [i, j] = [start, mid + 1]
+    do {
+        if (arr[i] &lt;= arr[j]) {
+            temp.push(arr[i++])
+        } else {
+            temp.push(arr[j++])
+        }
+    } while (i &lt;= mid &amp;&amp; j &lt;= end);
+    while (i &lt;= mid) {
+        temp.push(arr[i++])
+    }
+    while (j &lt;= end) {
+        temp.push(arr[j++])
+    }
+    for (let k = 0; k &lt; temp.length; k++) {
+        arr[start + k] = temp[k];
+    }
+}</code></pre>
+<p>归并的思想理解起来不难，但用js实现起来相对复杂，需要有耐心地理解。</p>
+<hr>
+<p>在用js实现这些排序算法的逻辑的过程中，会发现，简单的实现逻辑不是完美的，要考虑性能优化。</p>
+<p>是否要改变源数组？如果不改变，那就会产生一个新数组，等于一块临时的内存地址，空间复杂度就会变大；</p>
+<p>同理，核心的代码部分，如果是通过产生几个临时变量来辅助存放，那么实现逻辑是很简单的，但是增加了空间复杂度，特别是对于需要递归的算法来说，一旦数据量大就容易造成内存溢出。</p>
+<p>实现了一遍之后，再<font color=red>不断地优化自己写的代码</font>，我个人觉得这更有意义。</p>
+
+</section>
+        </main>
+    </div>
+
+    <!-- 引入jQuery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 引入highlight js -->
+    
+<script src="/lib/highlight/highlight.pack.js"></script>
+
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    <!-- 引入js -->
+    
+<script src="/js/main.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
